@@ -1,5 +1,5 @@
-const timedjs = require('timedjs')
-const timed = new timedjs()
+const Timed = require('timedjs')
+const timed = new Timed()
 timed.start('a')
 setInterval(()=>{
     let v = timed.get('a')
