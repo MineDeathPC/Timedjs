@@ -9,6 +9,6 @@
   "author": "minedeath (minedeathpc@gmail.com)",
   "license": "MIT",
   "dependencies": {
-    "timedjs": "^1.0.4"
+    "timedjs": "^1.0.5"
   }
 }

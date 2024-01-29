@@ -19,7 +19,7 @@
 
 
 
-class Timed{
+class TimedJS{
     //used to store timer data
     static timedData = [{}];
    
@@ -27,8 +27,8 @@ class Timed{
     start(label,callback=()=>{}){
         try{
         let startTime = performance.now()
-        if(!Timed.timedData.some(a=>a.label===label)){
-            Timed.timedData.push({label:label,startTime:startTime});
+        if(!TimedJS.timedData.some(a=>a.label===label)){
+            TimedJS.timedData.push({label:label,startTime:startTime});
             if (typeof callback === 'function' && callback !== (() => {}))
                callback();
         }
@@ -42,10 +42,10 @@ class Timed{
     stop(label,callback=()=>{}){
         try{
         let stopTime = performance.now();
-        if(Timed.timedData.some(a=>a.label===label)){
-            let data = Timed.timedData.filter(a=>a.label===label)[0]
-            let index = Timed.timedData.indexOf(data);
-            Timed.timedData.splice(index,1);
+        if(TimedJS.timedData.some(a=>a.label===label)){
+            let data = TimedJS.timedData.filter(a=>a.label===label)[0]
+            let index = TimedJS.timedData.indexOf(data);
+            TimedJS.timedData.splice(index,1);
             if (typeof callback === 'function' && callback !== (() => {})){
                 callback(stopTime-data.startTime?stopTime-data.startTime:null);
             }
@@ -60,8 +60,8 @@ class Timed{
     get(label,callback=()=>{}){
         try{
             let stopTime = performance.now()
-         if(Timed.timedData.some(a=>a.label===label)){
-            let startTime = Timed.timedData.filter(a=>a.label===label)[0].startTime;
+         if(TimedJS.timedData.some(a=>a.label===label)){
+            let startTime = TimedJS.timedData.filter(a=>a.label===label)[0].startTime;
 
             if (typeof callback === 'function' && callback !== (() => {})) {
                 callback(stopTime-startTime?stopTime-startTime:null);
@@ -78,6 +78,4 @@ class Timed{
 
 
 //export 
-module.exports = {
-    timedjs:Timed
-  };
+module.exports = TimedJS;
