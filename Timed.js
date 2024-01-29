@@ -1,9 +1,29 @@
-//Timed.js All the functionality of console.time() with the accessibility of the performance() object
+/**
+ * Created by minedeathpc@gmail.com
+ * instagram : minedeath.gt
+ * 
+ * TimerLibrary: A JavaScript library that seamlessly integrates console timing functionalities with the robust performance timing system.
+ *
+ * TimerLibrary provides a convenient and unified interface for measuring and managing time intervals within your JavaScript applications. By combining the ease of use of the console timing system with the precision and accessibility of the built-in performance timing system, TimerLibrary offers developers a powerful tool for profiling, benchmarking, and optimizing code execution.
+ *
+ * Key Features:
+ * - Start and stop named timers with a single line of code.
+ * - Retrieve accurate elapsed times for specific timer intervals.
+ * - Utilize both console-based and performance-based timing functionalities.
+ * - Simplify code profiling and performance analysis.
+ * 
+ * 
+ * 
+ * */
+
+
+
 
 class Timed{
-    //{label:,startTime:},{label:,startTime},...
+    //used to store timer data
     static timedData = [{}];
-    //start timing Timed.start(label,optionalCallbackOnStart)
+   
+    //to start a timer
     start(label,callback=()=>{}){
         try{
         let startTime = performance.now()
@@ -18,7 +38,8 @@ class Timed{
       }
     }
 
-    end(label,callback=()=>{}){
+    //to stop a timer and obtain it's total duration, in ms
+    stop(label,callback=()=>{}){
         try{
         let stopTime = performance.now();
         if(Timed.timedData.some(a=>a.label===label)){
@@ -35,6 +56,7 @@ class Timed{
       }
     }
 
+    //to get the current amount of time passed for a timer, in ms
     get(label,callback=()=>{}){
         try{
             let stopTime = performance.now()
@@ -55,7 +77,7 @@ class Timed{
 }
 
 
-
+//export 
 module.exports = {
     Timed:Timed
   };

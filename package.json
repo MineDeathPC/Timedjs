@@ -1,7 +1,7 @@
 {
-  "name": "timed_library",
+  "name": "timedjs",
   "version": "1.0.0",
-  "description": "All the functionality of console.time() with the accessibility of performance()",
+  "description": "A Node.js library for timing tasks.",
   "main": "Timed.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
