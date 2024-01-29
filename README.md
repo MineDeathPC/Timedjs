@@ -3,7 +3,7 @@
 Timedjs is a Node.js module that seamlessly combines the functionalities of the console timing system with the accessibility of the built-in performance timing system.
 
 [NPM module page](https://www.npmjs.com/package/timedjs)
-
+[Github Repository](https://github.com/MineDeathPC/Timedjs.git) 
 
 ---
 ## Installation
